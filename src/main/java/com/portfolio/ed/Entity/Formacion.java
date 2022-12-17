@@ -8,8 +8,6 @@ import javax.persistence.Id;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
-
-
 @Entity
 public class Formacion {
   
@@ -24,27 +22,28 @@ public class Formacion {
     @Size(min =1, max=50, message= "No cumple con la longitud")
     private String titulo;
     
-    @Size(min =1, max=10, message= "No cumple con la longitud")
+    @Size(max=10, message= "No cumple con la longitud")
     private String fecha;
     
-    @Size(min =1, max=50, message= "No cumple con la longitud")
+    @Size(max=50, message= "No cumple con la longitud")
     private String institucion;
     
-    @Size(min =1, max=100, message= "No cumple con la longitud")
+    @Size(max=100, message= "No cumple con la longitud")
     private String descripcion;
     
-    //private Long idClaseForm;
+    @Size(max=50, message= "No cumple con la longitud")
+    private String claseForm;
 
     public Formacion() {
     }
 
-    public Formacion(String titulo, String fecha, String institucion, String descripcion) {
+    public Formacion(String titulo, String fecha, String institucion, String descripcion, String claseForm) {
         //this.idPersona = idPersona;
         this.titulo = titulo;
         this.fecha = fecha;
         this.institucion = institucion;
         this.descripcion = descripcion;
-        //this.idClaseForm = idClaseForm;
+        this.claseForm = claseForm;
     }
 
     public Long getId() {
@@ -95,12 +94,12 @@ public class Formacion {
         this.descripcion = descripcion;
     }
 
-    //public Long getIdClaseForm() {
-    //    return idClaseForm;
-    //}
+    public String getClaseForm() {
+        return claseForm;
+    }
 
-    //public void setIdClaseForm(Long idClaseForm) {
-    //    this.idClaseForm = idClaseForm;
-    //}
+    public void setClaseForm(String claseForm) {
+       this.claseForm = claseForm;
+    }
     
 }

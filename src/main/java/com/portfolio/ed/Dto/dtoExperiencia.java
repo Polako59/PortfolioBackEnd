@@ -1,49 +1,28 @@
 
-package com.portfolio.ed.Entity;
+package com.portfolio.ed.Dto;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.validation.constraints.NotNull;
-import javax.validation.constraints.Size;
+import javax.validation.constraints.NotBlank;
 
 
-@Entity
-public class Experiencia {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
-    
-    //@NotNull
-    //private Long idPersona;
-    
-    @NotNull
-    @Size(min =1, max=50, message= "No cumple con la longitud")
+public class dtoExperiencia {
+    @NotBlank
     private String empresa;
-    
-    @Size(min =1, max=10, message= "No cumple con la longitud")
+    @NotBlank
     private String desde;
-    
-    @Size(min =1, max=10, message= "No cumple con la longitud")
+    @NotBlank
     private String hasta;
-    
-    @Size(min =1, max=50, message= "No cumple con la longitud")
+    @NotBlank
     private String puesto;
-    
-    @Size(min =1, max=150, message= "No cumple con la longitud")
+    @NotBlank
     private String tareas;
-    
-    @Size(min =1, max=50, message= "No cumple con la longitud")
     private String logo;
-    
     
     //Constructores
 
-    public Experiencia() {
+    public dtoExperiencia() {
     }
 
-    public Experiencia(String empresa, String desde, String hasta, String puesto, String tareas, String logo) {
+    public dtoExperiencia(String empresa, String desde, String hasta, String puesto, String tareas, String logo) {
         this.empresa = empresa;
         this.desde = desde;
         this.hasta = hasta;
@@ -52,15 +31,7 @@ public class Experiencia {
         this.logo = logo;
     }
     
-    //Getter and Setters
-
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
+    //Getters and Setters
 
     public String getEmpresa() {
         return empresa;
@@ -110,5 +81,6 @@ public class Experiencia {
         this.logo = logo;
     }
     
+        
     
 }

@@ -7,35 +7,34 @@ import javax.validation.constraints.Size;
 
 public class dtoFormacion {
     
-    //@NotBlank
-    //private Long idPersona;
-    
+   
     @NotBlank
     @Size(min =1, max=50, message= "No cumple con la longitud")
     private String titulo;
     
-    @Size(min =1, max=10, message= "No cumple con la longitud")
+    @Size( max=10, message= "No cumple con la longitud")
     private String fecha;
     
     @Size(min =1, max=50, message= "No cumple con la longitud")
     private String institucion;
     
     @NotBlank
-    @Size(min =1, max=100, message= "No cumple con la longitud")
+    @Size( max=100, message= "No cumple con la longitud")
     private String descripcion;
     
-    //private Long idClaseForm;
+    @Size( max=50, message= "No cumple con la longitud")
+    private String claseForm;
 
     public dtoFormacion() {
     }
 
-    public dtoFormacion(Long idPersona, String titulo, String fecha, String institucion, String descripcion, Long idClaseForm) {
+    public dtoFormacion(String titulo, String fecha, String institucion, String descripcion, String claseForm) {
         //this.idPersona = idPersona;
         this.titulo = titulo;
         this.fecha = fecha;
         this.institucion = institucion;
         this.descripcion = descripcion;
-        //this.idClaseForm = idClaseForm;
+        this.claseForm = claseForm;
     }
 
     //public Long getIdPersona() {
@@ -78,13 +77,13 @@ public class dtoFormacion {
         this.descripcion = descripcion;
     }
 
-    //public Long getIdClaseForm() {
-    //    return idClaseForm;
-    //}
+    public String getClaseForm() {
+        return claseForm;
+    }
 
-    //public void setIdClaseForm(Long idClaseForm) {
-    //    this.idClaseForm = idClaseForm;
-    //}
+    public void setClaseForm(String claseForm) {
+        this.claseForm = claseForm;
+    }
     
     
 }

@@ -25,8 +25,8 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @RequestMapping("/formacion")
-@CrossOrigin(origins="http://localhost:4200")
-
+//@CrossOrigin(origins="http://localhost:4200")
+@CrossOrigin
 public class FormacionController {
     @Autowired 
     ImpFormacionService impformacionService;
@@ -60,7 +60,7 @@ public class FormacionController {
     }
     
     ///@PreAuthorize("hasRole('ADMIN')")
-    @PostMapping("/crear")
+    @PostMapping("/create")
     public ResponseEntity<?> create(@RequestBody dtoFormacion dtoformacion){
         if(StringUtils.isBlank(dtoformacion.getTitulo())){
             return new ResponseEntity(new Mensaje("El nombre es obligatorio"), HttpStatus.BAD_REQUEST);
@@ -69,13 +69,12 @@ public class FormacionController {
             return new ResponseEntity(new Mensaje("Ese nombre ya existe"), HttpStatus.BAD_REQUEST);
         }
         
-                //dtoformacion.getIdPersona(),dtoformacion.getTitulo(), dtoformacion.getFecha(),
-                //dtoformacion.getInstitucion(),
-                //dtoformacion.getDescripcion(),dtoformacion.getIdClaseForm());
-        Formacion formacion = new Formacion(
-                dtoformacion.getTitulo(), dtoformacion.getFecha(),
+          Formacion formacion = new Formacion(
+                dtoformacion.getTitulo(), 
+                dtoformacion.getFecha(),
                 dtoformacion.getInstitucion(),
-                dtoformacion.getDescripcion());
+                dtoformacion.getDescripcion(),
+                dtoformacion.getClaseForm());
 
         
         impformacionService.saveFormacion(formacion);
@@ -86,7 +85,7 @@ public class FormacionController {
     }
     
     ///@PreAuthorize("hasRole('ADMIN')")
-    @PutMapping("/editar/{id}")
+    @PutMapping("/update/{id}")
     public ResponseEntity<?> update(@PathVariable("id") Long id, @RequestBody dtoFormacion dtoformacion){
         if(!impformacionService.existsById(id)){
             return new ResponseEntity(new Mensaje("No existe el ID"), HttpStatus.NOT_FOUND);
@@ -105,7 +104,7 @@ public class FormacionController {
         formacion.setFecha(dtoformacion.getFecha());
         formacion.setInstitucion(dtoformacion.getInstitucion());
         formacion.setDescripcion(dtoformacion.getDescripcion());
-        //formacion.setIdClaseForm(dtoformacion.getIdClaseForm());
+        formacion.setClaseForm(dtoformacion.getClaseForm());
         
         impformacionService.saveFormacion(formacion);
         

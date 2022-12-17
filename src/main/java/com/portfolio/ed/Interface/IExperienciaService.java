@@ -8,14 +8,14 @@ import java.util.List;
 public interface IExperienciaService {
     
     //Traer una lista de Experiencia
-    public List<Experiencia> getExperiencia();
+    public List<Experiencia> get();
     
     //Guardar un objeto de tipo Experiencia
-    public void saveExperiencia(Experiencia experiencia);
+    public void save(Experiencia experiencia);
     
     //Eliminar un objeto pero lo buscamos por ID
-    public void deleteExperiencia(Long id);
+    public void delete(Long id);
     
     //Buscar una Experiencia por ID
-    public Experiencia findExperiencia(Long id);
+    public Experiencia find(Long id);
 }
