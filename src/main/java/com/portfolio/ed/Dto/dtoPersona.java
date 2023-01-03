@@ -1,63 +1,37 @@
 
-package com.portfolio.ed.Entity;
+package com.portfolio.ed.Dto;
 
-import java.util.Date;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.validation.constraints.NotNull;
-import javax.validation.constraints.Size;
-import lombok.Getter;
-import lombok.Setter;
+import javax.validation.constraints.NotBlank;
 
 
-@Entity
-public class Persona {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
-    
-    @NotNull
-    @Size(min =1, max=50, message= "No cumple con la longitud")
+public class dtoPersona {
+
+    @NotBlank
     private String nombres;
-    
-    @NotNull
-    @Size(min =1, max=50, message= "No cumple con la longitud")
+    @NotBlank
     private String apellido;
-    
-    @NotNull
-    @Size(min =1, max=10, message= "No cumple con la longitud")
-    //private Date fechaNacimiento;
+    @NotBlank
     private String fechaNacimiento;
-    
-    @NotNull
-    @Size(min =1, max=50, message= "No cumple con la longitud")
+    @NotBlank
     private String nacionalidad;
-    
-    @NotNull
-    @Size(min =1, max=50, message= "No cumple con la longitud")
+    @NotBlank
     private String mail;
-    
-    @NotNull
-    @Size(min =1, max=200, message= "No cumple con la longitud")
+    @NotBlank
     private String acercaDe;
-        
-    @Size(min =1, max=50, message= "No cumple con la longitud")
+    @NotBlank
     private String ocupacion;
-    
-    @NotNull
+    @NotBlank
     private String image_background_header;
-    
-    @NotNull
+    @NotBlank
     private String image_perfil_header;
-
+    @NotBlank
+    
     //Constructores
 
-    public Persona() {
+    public dtoPersona() {
     }
 
-    public Persona(String nombres, String apellido, String fechaNacimiento, String nacionalidad, String mail, String acercaDe, String ocupacion, String image_background_header, String image_perfil_header) {
+    public dtoPersona(String nombres, String apellido, String fechaNacimiento, String nacionalidad, String mail, String acercaDe, String ocupacion, String image_background_header, String image_perfil_header) {
         this.nombres = nombres;
         this.apellido = apellido;
         this.fechaNacimiento = fechaNacimiento;
@@ -68,16 +42,8 @@ public class Persona {
         this.image_background_header = image_background_header;
         this.image_perfil_header = image_perfil_header;
     }
-
-    //Getter and Setters
-
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
-    }
+    
+    //Getters and Setters
 
     public String getNombres() {
         return nombres;
@@ -153,9 +119,3 @@ public class Persona {
     
     
 }
-
-
-
-
-
-

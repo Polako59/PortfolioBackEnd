@@ -19,7 +19,7 @@ public class Formacion {
     //private Long idPersona;
     
     @NotNull
-    @Size(min =1, max=50, message= "No cumple con la longitud")
+    @Size(max=50, message= "No cumple con la longitud")
     private String titulo;
     
     @Size(max=10, message= "No cumple con la longitud")
