@@ -40,7 +40,7 @@ public class Persona {
     private String mail;
     
     @NotNull
-    @Size(min =1, max=200, message= "No cumple con la longitud")
+    @Size(min =1, max=300, message= "No cumple con la longitud")
     private String acercaDe;
         
     @Size(min =1, max=50, message= "No cumple con la longitud")

@@ -25,7 +25,7 @@ public class Skills {
     @NotNull
     private long level;
     
-    @Size(max=150, message= "No cumple con la longitud")
+    @Size(max=250, message= "No cumple con la longitud")
     private String logo;
     
   

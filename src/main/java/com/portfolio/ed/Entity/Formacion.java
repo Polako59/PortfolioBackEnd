@@ -19,16 +19,16 @@ public class Formacion {
     //private Long idPersona;
     
     @NotNull
-    @Size(max=50, message= "No cumple con la longitud")
+    @Size(max=250, message= "No cumple con la longitud")
     private String titulo;
     
     @Size(max=10, message= "No cumple con la longitud")
     private String fecha;
     
-    @Size(max=50, message= "No cumple con la longitud")
+    @Size(max=150, message= "No cumple con la longitud")
     private String institucion;
     
-    @Size(max=100, message= "No cumple con la longitud")
+    @Size(max=400, message= "No cumple con la longitud")
     private String descripcion;
     
     @Size(max=50, message= "No cumple con la longitud")

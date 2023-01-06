@@ -9,13 +9,11 @@ public class dtoSkills {
     
   
     @NotBlank
-    @Size(max=50, message= "No cumple con la longitud")
     private String name;
     
     @NotBlank
     private long level;
     
-    @Size( max=150, message= "No cumple con la longitud")
     private String logo;
     
     //Constructors

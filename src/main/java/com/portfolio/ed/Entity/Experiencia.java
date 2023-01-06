@@ -19,7 +19,7 @@ public class Experiencia {
     //private Long idPersona;
     
     @NotNull
-    @Size(max=50, message= "No cumple con la longitud")
+    @Size(max=100, message= "No cumple con la longitud")
     private String empresa;
     
     @Size(max=10, message= "No cumple con la longitud")
@@ -28,13 +28,13 @@ public class Experiencia {
     @Size(max=10, message= "No cumple con la longitud")
     private String hasta;
     
-    @Size(max=50, message= "No cumple con la longitud")
+    @Size(max=150, message= "No cumple con la longitud")
     private String puesto;
     
-    @Size(max=150, message= "No cumple con la longitud")
+    @Size(max=750, message= "No cumple con la longitud")
     private String tareas;
     
-    @Size(max=50, message= "No cumple con la longitud")
+    @Size(max=300, message= "No cumple con la longitud")
     private String logo;
     
     

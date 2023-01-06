@@ -9,20 +9,15 @@ public class dtoFormacion {
     
    
     @NotBlank
-    @Size(max=50, message= "No cumple con la longitud")
     private String titulo;
     
-    @Size( max=10, message= "No cumple con la longitud")
     private String fecha;
     
-    @Size(max=50, message= "No cumple con la longitud")
     private String institucion;
     
     @NotBlank
-    @Size( max=100, message= "No cumple con la longitud")
     private String descripcion;
     
-    @Size( max=50, message= "No cumple con la longitud")
     private String claseForm;
 
     public dtoFormacion() {

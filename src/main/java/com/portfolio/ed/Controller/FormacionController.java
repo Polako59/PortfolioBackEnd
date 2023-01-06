@@ -25,8 +25,8 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @RequestMapping("/formacion")
-//@CrossOrigin(origins="http://localhost:4200")
-@CrossOrigin
+@CrossOrigin(origins="https://hosting-angular-argprog-4b59b.web.app/")
+//@CrossOrigin
 public class FormacionController {
     @Autowired 
     ImpFormacionService impformacionService;
